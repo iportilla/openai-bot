@@ -2,16 +2,18 @@
 
 1. Clone repo
    
-    `git clone repo`
+    `git clone https://github.com/iportilla/openai-bot.git`
    
 2. Copy env.sample to .env
    
    `cp env.sample .env`
+
+3. Update openAI key in .env
    
-3. Install dependencies
+4. Install dependencies
  
-   `pip install -r requirements.txt
+   `pip install -r requirements.txt`
    
-4. run ST UI
+5. run ST UI
  
    `streamlit run app.py`
