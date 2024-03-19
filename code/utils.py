@@ -6,7 +6,7 @@ import streamlit as st
 load_dotenv()
 api_key = os.getenv("openai_api_key")
 
-client = OpenAI(organization='org-VuXTSOSFz2OX09Fir3zTdOeK', api_key=api_key)
+client = OpenAI(organization='', api_key=api_key)
 
 def get_answer(messages):
     system_message = [{"role": "system", "content": "You are an helpful AI chatbot, that answers questions asked by User."}]
