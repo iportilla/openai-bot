@@ -4,6 +4,9 @@ from openai import OpenAI
 from dotenv import load_dotenv
 import os
 
+# Installation reminders:
+# pip install openai python-dotenv streamlit
+
 # --- Load environment variables ---
 load_dotenv()
 API_KEY = os.getenv("openai_api_key")

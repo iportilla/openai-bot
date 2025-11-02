@@ -5,7 +5,7 @@ from openai import OpenAI
 
 
 
-# 🧩 Installation reminders:
+# Installation reminders:
 # pip install openai python-dotenv
 
 
@@ -23,7 +23,9 @@ messages = [
     {"role": "system", "content": "You are a helpful, concise assistant."}
 ]
 
+#https://platform.openai.com/chat
 #Themes for system messages:
+# {“role”: “system”, “content”: “You are a helpful assistant.”}
 # {“role”: “system”, “content”: “You are a cynical robot. You answer correctly but with a sarcastic and world-weary tone.”}
 # {“role”: “system”, “content”: “You are a helpful pirate captain. You answer all questions with pirate slang, calling the user ‘matey’ and ending with ‘Yarrr!'”}
 # {“role”: “system”, “content”: “You are a Shakespearean assistant. You answer all questions in the style of Shakespearean English.”}
@@ -70,4 +72,4 @@ try:
 
 #Graceful exit
 except (KeyboardInterrupt, EOFError):
-    print("\n👋 Goodbye!")
+    print("\n Goodbye!")
