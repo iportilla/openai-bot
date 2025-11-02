@@ -11,9 +11,9 @@ from openai import OpenAI
 
 #Load environment variables from .env (expects OPENAI_API_KEY)
 load_dotenv()
-api_key = os.getenv("OPENAI_API_KEY")  # must match variable name in .env file
+api_key = os.getenv("openai_api_key")  # must match variable name in .env file
 if not api_key:
-    raise SystemExit("❌ Missing OPENAI_API_KEY. Put it in a .env file or export it.")
+    raise SystemExit("Missing openai_api_key. Put it in a .env file or export it.")
 
 #Initialize OpenAI client
 client = OpenAI(api_key=api_key)

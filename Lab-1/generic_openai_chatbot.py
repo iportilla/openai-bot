@@ -10,7 +10,7 @@ API_KEY = os.getenv("openai_api_key")
 
 # --- Setup client ---
 if not API_KEY:
-    st.error("❌ Missing OPENAI_API_KEY in .env file.")
+    st.error("Missing openai_api_key in .env file.")
 else:
     client = OpenAI(api_key=API_KEY)
 
