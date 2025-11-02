@@ -1,0 +1,31 @@
+{
+  "pizzas": [
+    {
+      "name": "Classic Pepperoni",
+      "price": 14,
+      "ingredients": [
+        "pepperoni",
+        "mozzarella"
+      ]
+    },
+    {
+      "name": "Veggie Delight",
+      "price": 16,
+      "ingredients": [
+        "bell peppers",
+        "olives",
+        "mushrooms",
+        "onions"
+      ]
+    },
+    {
+      "name": "Spicy Diablo",
+      "price": 18,
+      "ingredients": [
+        "pepperoni",
+        "jalape\u00f1os",
+        "chili oil"
+      ]
+    }
+  ]
+}
