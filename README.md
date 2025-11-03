@@ -8,6 +8,7 @@ This repository contains hands-on labs and demos exploring how to build chatbots
 Lab-1/           # Basic OpenAI chat completion examples
 Lab-2/           # Memory-enabled chatbots + utility helpers
 Lab-3/           # Flower & voice chatbots
+Lab-4/           # Pizza bot exercise
 voice/           # Streamlit voice chatbot app
 voice_code/      # Alternate implementation of voice chatbot
 ```
@@ -59,11 +60,19 @@ Located in `Lab-2/`
 - Adds conversation memory and persistent context.
 - Introduces helper utilities.
 
-### **Lab 3 - Flower and Voice Bots**
+### **Lab 3 - Flower Bot**
 
 Located in `Lab-3/`
 
-- Task-specific chatbots and voice chatbot integration.
+- Task-specific chatbot integration.
+
+---
+
+### **Lab 4 - Pizza Bot exercise**
+
+Located in `Lab-4/`
+
+- Task-specific chatbot integration.
 
 ---
 
