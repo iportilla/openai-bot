@@ -2,7 +2,8 @@
 
 This repository contains hands-on labs and demos exploring how to build chatbots and AI agents using the OpenAI API.
 
-![Uploading image.png…]()
+<img width="739" height="285" alt="image" src="https://github.com/user-attachments/assets/70ef8786-a045-48b5-9666-1133c6a8101c" />
+
 
 
 ## Repository Structure
