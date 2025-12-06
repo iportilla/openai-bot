@@ -1,0 +1,4 @@
+openai
+streamlit
+python-dotenv
+hypothesis>=6.0,<6.100
