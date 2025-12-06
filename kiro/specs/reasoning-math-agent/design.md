@@ -62,24 +62,24 @@ graph TD
 sequenceDiagram
     participant User
     participant UI as Streamlit UI
-    participant Loop as Reasoning Loop
-    participant OpenAI as OpenAI API
-    participant Tools as Tool Registry
+    participant ReasoningLoop as Reasoning Loop
+    participant OpenAIAPI as OpenAI API
+    participant ToolReg as Tool Registry
     
     User->>UI: Submit Math Problem
-    UI->>Loop: run_reasoning_loop(problem)
-    Loop->>OpenAI: POST /chat/completions<br/>(with tools)
-    OpenAI-->>Loop: Response with tool_calls
-    Loop->>Tools: Execute multiply(a, b)
-    Tools-->>Loop: Result
-    Loop->>OpenAI: POST /chat/completions<br/>(with tool result)
-    OpenAI-->>Loop: Response with reasoning
-    Loop->>Loop: Check if solved
+    UI->>ReasoningLoop: run_reasoning_loop(problem)
+    ReasoningLoop->>OpenAIAPI: POST /chat/completions (with tools)
+    OpenAIAPI-->>ReasoningLoop: Response with tool_calls
+    ReasoningLoop->>ToolReg: Execute multiply(a, b)
+    ToolReg-->>ReasoningLoop: Result
+    ReasoningLoop->>OpenAIAPI: POST /chat/completions (with tool result)
+    OpenAIAPI-->>ReasoningLoop: Response with reasoning
+    ReasoningLoop->>ReasoningLoop: Check if solved
     alt Problem Solved
-        Loop-->>UI: Final solution with all steps
+        ReasoningLoop-->>UI: Final solution with all steps
         UI->>User: Display complete reasoning
     else More Steps Needed
-        Loop->>OpenAI: Continue reasoning loop
+        ReasoningLoop->>OpenAIAPI: Continue reasoning loop
     end
 ```
 
