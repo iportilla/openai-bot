@@ -106,20 +106,27 @@ class ReasoningAgent:
             
             # STEP 2: Add assistant's response to message history
             # This maintains context for the next iteration
-            messages.append({
+            # Note: Only add tool_calls if they exist, to avoid validation errors
+            assistant_msg = {
                 "role": "assistant",
-                "content": assistant_message.content or "",
-                "tool_calls": [
+                "content": assistant_message.content or ""
+            }
+            
+            # Add tool_calls with proper structure if they exist
+            if assistant_message.tool_calls:
+                assistant_msg["tool_calls"] = [
                     {
                         "id": tc.id,
+                        "type": "function",  # Required by OpenAI API
                         "function": {
                             "name": tc.function.name,
                             "arguments": tc.function.arguments
                         }
                     }
-                    for tc in (assistant_message.tool_calls or [])
+                    for tc in assistant_message.tool_calls
                 ]
-            })
+            
+            messages.append(assistant_msg)
             
             # Record this reasoning step for output
             step = {
@@ -154,9 +161,11 @@ class ReasoningAgent:
                     
                     # STEP 5: Add tool result back to message history
                     # This is crucial - the model will see the result and reason about it
+                    # OpenAI API requires a "tool" message with the tool_call_id
                     messages.append({
-                        "role": "user",
-                        "content": f"Tool result for {tool_name}: {tool_result}"
+                        "role": "tool",
+                        "tool_call_id": tool_call.id,
+                        "content": str(tool_result)
                     })
             else:
                 # No tool calls - the model has provided reasoning without needing tools
