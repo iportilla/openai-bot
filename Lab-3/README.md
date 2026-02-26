@@ -19,8 +19,8 @@ streamlit run flower_bot.py
 ## How to Run the Voice Bot
 
 ```bash
-cd Lab-3
-streamlit python voice_bot.py
+cd ../voice
+streamlit run voice_bot.py
 ```
 
 ## Key Concepts Introduced
